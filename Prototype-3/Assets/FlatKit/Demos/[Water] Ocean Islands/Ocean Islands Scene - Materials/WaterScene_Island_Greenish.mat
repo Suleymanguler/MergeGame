@@ -30,7 +30,8 @@ Material:
   m_CustomRenderQueue: 2000
   stringTagMap:
     RenderType: Opaque
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - SRPDEFAULTUNLIT
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -74,6 +75,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _CameraDistanceImpact: 0
     - _CelExtraEnabled: 1
     - _CelNumSteps: 3
     - _CelPrimaryMode: 1
@@ -102,6 +104,9 @@ Material:
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _OutlineDepthOffset: 0
+    - _OutlineScale: 1
+    - _OutlineWidth: 0
     - _OverrideLightmapDir: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -119,6 +124,7 @@ Material:
     - _TextureBlendingMode: 0
     - _TextureImpact: 1
     - _UnityShadowMode: 2
+    - _UnityShadowOcclusion: 0
     - _UnityShadowPower: 0.2
     - _UnityShadowSharpness: 2.57
     - _VertexColorsEnabled: 0
@@ -136,6 +142,7 @@ Material:
     - _FlatRimColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _FlatSpecularColor: {r: 0.9433962, g: 0.8232467, b: 0.8232467, a: 1}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _UnityShadowColor: {r: 0, g: 0.27326158, b: 0.468, a: 0.30588236}
   m_BuildTextureStacks: []

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-namespace FlatKit {
-public class CameraMouseOrbit : MonoBehaviour {
+namespace Dustyroom {
+public class OrbitMotion : MonoBehaviour {
     public enum TargetMode {
         Transform,
         Position
