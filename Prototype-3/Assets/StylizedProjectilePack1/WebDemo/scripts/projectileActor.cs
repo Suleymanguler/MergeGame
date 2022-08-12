@@ -37,7 +37,7 @@ public class projectileActor : MonoBehaviour {
     public float rapidFireDelay;
     public CameraShake CameraShakeCaller;
 
-    float firingTimer;
+    public float firingTimer;
     public bool firing;
     public int bombType = 0;
 
@@ -57,10 +57,10 @@ public class projectileActor : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        if (UImaster)
-        {
-            UiText.text = bombList[bombType].name.ToString();
-        }
+        //if (UImaster)
+        //{
+        //    UiText.text = bombList[bombType].name.ToString();
+        //}
         if (swarmMissileLauncher)
         {
             projectileSimFire = 5;
