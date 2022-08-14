@@ -35,7 +35,7 @@ public class projectileActor : MonoBehaviour {
     public bool UImaster = true;
     public bool CameraShake = true;
     public float rapidFireDelay;
-    public CameraShake CameraShakeCaller;
+    public CameraShakeScript CameraShakeCaller;
 
     public float firingTimer;
     public bool firing;
@@ -70,17 +70,18 @@ public class projectileActor : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        spawnLocator.transform.rotation = Quaternion.Euler(0, 0,0);
         //Movement
         if(Input.GetButton("Horizontal"))
         {
-            if (Input.GetAxis("Horizontal") < 0)
-            {
-                gameObject.transform.Rotate(Vector3.up, -25 * Time.deltaTime);
-            }
-            else
-            {
-                gameObject.transform.Rotate(Vector3.up, 25 * Time.deltaTime);
-            }
+            //if (Input.GetAxis("Horizontal") < 0)
+            //{
+            //    gameObject.transform.Rotate(Vector3.up, -25 * Time.deltaTime);
+            //}
+            //else
+            //{
+            //    gameObject.transform.Rotate(Vector3.up, 25 * Time.deltaTime);
+            //}
         }
 
         //BULLETS
@@ -95,6 +96,7 @@ public class projectileActor : MonoBehaviour {
 
 	    if(Input.GetButtonDown("Fire1"))
         {
+            //StartCoroutine(CameraShakeCaller.shake(.1f, .1f));
             firing = true;
             Fire();
         }
@@ -139,11 +141,11 @@ public class projectileActor : MonoBehaviour {
 
     public void Fire()
     {
-        if(CameraShake)
-        {
-            CameraShakeCaller.ShakeCamera();
-        }
-        Instantiate(bombList[bombType].muzzleflare, spawnLocatorMuzzleFlare.position, spawnLocatorMuzzleFlare.rotation);
+        //if(CameraShake)
+        //{
+        //    CameraShakeCaller.ShakeCamera();
+        //}
+        Instantiate(bombList[bombType].muzzleflare, spawnLocatorMuzzleFlare.position, spawnLocatorMuzzleFlare.transform.rotation);
         //   bombList[bombType].muzzleflare.Play();
 
         if (bombList[bombType].hasShells)
@@ -153,9 +155,10 @@ public class projectileActor : MonoBehaviour {
         recoilAnimator.SetTrigger("recoil_trigger");
 
         Rigidbody rocketInstance;
-        rocketInstance = Instantiate(bombList[bombType].bombPrefab, spawnLocator.position,spawnLocator.rotation) as Rigidbody;
+        rocketInstance = Instantiate(bombList[bombType].bombPrefab, gameObject.transform.position,gameObject.transform.rotation) as Rigidbody;
         // Quaternion.Euler(0,90,0)
-        rocketInstance.AddForce(spawnLocator.forward * Random.Range(bombList[bombType].min, bombList[bombType].max));
+        //rocketInstance.AddForce(spawnLocator.forward * Random.Range(bombList[bombType].min, bombList[bombType].max));
+        rocketInstance.AddForce(spawnLocator.forward*5000f);
 
         if (bombList[bombType].shotgunBehavior)
         {
@@ -168,86 +171,86 @@ public class projectileActor : MonoBehaviour {
             }
         }
 
-        if (Torque)
-        {
-            rocketInstance.AddTorque(spawnLocator.up * Random.Range(Tor_min, Tor_max));
-        }
-        if (MinorRotate)
-        {
-            RandomizeRotation();
-        }
-        if (MajorRotate)
-        {
-            Major_RandomizeRotation();
-        }
+        //if (Torque)
+        //{
+        //    rocketInstance.AddTorque(spawnLocator.up * Random.Range(Tor_min, Tor_max));
+        //}
+        //if (MinorRotate)
+        //{
+        //    RandomizeRotation();
+        //}
+        //if (MajorRotate)
+        //{
+        //    Major_RandomizeRotation();
+        //}
     }
 
 
-    void RandomizeRotation()
-    {
-        if (seq == 0)
-        {
-            seq++;
-            transform.Rotate(0, 1, 0);
-        }
-      else if (seq == 1)
-        {
-            seq++;
-            transform.Rotate(1, 1, 0);
-        }
-      else if (seq == 2)
-        {
-            seq++;
-            transform.Rotate(1, -3, 0);
-        }
-      else if (seq == 3)
-        {
-            seq++;
-            transform.Rotate(-2, 1, 0);
-        }
-       else if (seq == 4)
-        {
-            seq++;
-            transform.Rotate(1, 1, 1);
-        }
-       else if (seq == 5)
-        {
-            seq = 0;
-            transform.Rotate(-1, -1, -1);
-        }
-    }
+    //void RandomizeRotation()
+    //{
+    //    if (seq == 0)
+    //    {
+    //        seq++;
+    //        transform.Rotate(0, 1, 0);
+    //    }
+    //    else if (seq == 1)
+    //    {
+    //        seq++;
+    //        transform.Rotate(1, 1, 0);
+    //    }
+    //    else if (seq == 2)
+    //    {
+    //        seq++;
+    //        transform.Rotate(1, -3, 0);
+    //    }
+    //    else if (seq == 3)
+    //    {
+    //        seq++;
+    //        transform.Rotate(-2, 1, 0);
+    //    }
+    //    else if (seq == 4)
+    //    {
+    //        seq++;
+    //        transform.Rotate(1, 1, 1);
+    //    }
+    //    else if (seq == 5)
+    //    {
+    //        seq = 0;
+    //        transform.Rotate(-1, -1, -1);
+    //    }
+    //}
 
-    void Major_RandomizeRotation()
-    {
-        if (seq == 0)
-        {
-            seq++;
-            transform.Rotate(0, 25, 0);
-        }
-        else if (seq == 1)
-        {
-            seq++;
-            transform.Rotate(0, -50, 0);
-        }
-        else if (seq == 2)
-        {
-            seq++;
-            transform.Rotate(0, 25, 0);
-        }
-        else if (seq == 3)
-        {
-            seq++;
-            transform.Rotate(25, 0, 0);
-        }
-        else if (seq == 4)
-        {
-            seq++;
-            transform.Rotate(-50, 0, 0);
-        }
-        else if (seq == 5)
-        {
-            seq = 0;
-            transform.Rotate(25, 0, 0);
-        }
-    }
+    //void Major_RandomizeRotation()
+    //{
+    //    if (seq == 0)
+    //    {
+    //        seq++;
+    //        transform.Rotate(0, 25, 0);
+    //    }
+    //    else if (seq == 1)
+    //    {
+    //        seq++;
+    //        transform.Rotate(0, -50, 0);
+    //    }
+    //    else if (seq == 2)
+    //    {
+    //        seq++;
+    //        transform.Rotate(0, 25, 0);
+    //    }
+    //    else if (seq == 3)
+    //    {
+    //        seq++;
+    //        transform.Rotate(25, 0, 0);
+    //    }
+    //    else if (seq == 4)
+    //    {
+    //        seq++;
+    //        transform.Rotate(-50, 0, 0);
+    //    }
+    //    else if (seq == 5)
+    //    {
+    //        seq = 0;
+    //        transform.Rotate(25, 0, 0);
+    //    }
+    //}
 }
