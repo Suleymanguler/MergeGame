@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5624938372328714859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5624938372328714854}
+  - component: {fileID: 5624938372328714857}
+  - component: {fileID: 5624938372328714856}
+  - component: {fileID: 5624938372328714855}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5624938372328714854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624938372328714859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5624938372328714857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624938372328714859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &5624938372328714856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624938372328714859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &5624938372328714855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624938372328714859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ece9b776c220e442959a78660dbe4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunLv1: {fileID: 3288369042820208660, guid: db2a1ecb87f8f6149a2689d0084026df, type: 3}
+  gunLevel: 8
+  spawnLocations:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gunImages:
+  - {fileID: 7646994593758908712, guid: 473cf271b8a8a2d49ada4901738fc041, type: 3}
+  - {fileID: 6129116181891163942, guid: 7bbad8e7490cabb44a66f1a78761e373, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 4476396752663068925, guid: 172412b781277f840bea599cee24d291, type: 3}
+  - {fileID: 4476396752663068925, guid: ec420035d8337d8499a3d54cf3e69784, type: 3}
+  - {fileID: 4476396752663068925, guid: e799346f2b0bc014dba967d8583c20f3, type: 3}
+  - {fileID: 4476396752663068925, guid: 9392dba7c768b604b96d3b98bdd4edfd, type: 3}
+  - {fileID: 4476396752663068925, guid: 9f59195b3cc80fe4f9b841c9a7e71550, type: 3}
+  - {fileID: 4476396752663068925, guid: 75d31cff64118514ba5627289df953c8, type: 3}
+  - {fileID: 4476396752663068925, guid: 2b8e86c3da33e444a8dc653ad4d9d22d, type: 3}
+  - {fileID: 4476396752663068925, guid: 62254da70f8b5ab47bc238439ca6d26c, type: 3}

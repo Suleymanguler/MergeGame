@@ -15,16 +15,17 @@ public class enemyScript : MonoBehaviour
     public Image healthBar;
     private void Start()
     {
-        enemyRunSpeed = 12.5f;
+        enemyRunSpeed =12.5f;
 
         Health = Random.Range(minHealth, maxHealth);
         initialHealth = Health;
         mainCharacterObject = GameObject.FindGameObjectWithTag("mainCharacter");
     }
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         //move towards enemy
         transform.position =Vector3.MoveTowards(transform.position, mainCharacterObject.transform.position, enemyRunSpeed * Time.deltaTime);
+        //transform.Translate(0, 0, 10 * enemyRunSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)

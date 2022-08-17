@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4476396752663068897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4476396752663068898}
+  - component: {fileID: 4476396752663068926}
+  - component: {fileID: 4476396752663068925}
+  - component: {fileID: 4476396752663068924}
+  - component: {fileID: 4476396752663068899}
+  m_Layer: 5
+  m_Name: Gun 6
+  m_TagString: 0
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4476396752663068898
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476396752663068897}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -301, y: -460}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4476396752663068926
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476396752663068897}
+  m_CullTransparentMesh: 1
+--- !u!114 &4476396752663068925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476396752663068897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: -19.17, y: 1.4, z: -16.64, w: -3.57}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 3d07e61054d8fd449b8571dcb9ae33fc, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &4476396752663068924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476396752663068897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5624c9391016904d8bfddfae9f6f7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LvObjects:
+  - {fileID: 7646994593758908712, guid: 473cf271b8a8a2d49ada4901738fc041, type: 3}
+  - {fileID: 6129116181891163942, guid: 7bbad8e7490cabb44a66f1a78761e373, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 4476396752663068925}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  - {fileID: 8559318799075176960, guid: ce4c844ca330afe4a9e1092ad49c58e6, type: 3}
+  initialPos: {fileID: 4476396752663068898}
+--- !u!225 &4476396752663068899
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476396752663068897}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

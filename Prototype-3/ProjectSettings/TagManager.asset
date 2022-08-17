@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Lv1
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 0
+  - FX
+  - mainCharacter
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
   layers:
   - Default
   - TransparentFX
