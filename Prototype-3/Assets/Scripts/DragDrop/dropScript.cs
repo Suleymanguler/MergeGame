@@ -20,7 +20,10 @@ public class dropScript : MonoBehaviour,IDropHandler
             isOccupied = true;
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             pointBefore=eventData.pointerDrag.GetComponent<DragScript>().initialPos;
-            pointBefore.GetComponent<dropScript>().isOccupied = false;
+            if (pointBefore != gameObject.transform)
+            {
+                pointBefore.GetComponent<dropScript>().isOccupied = false;
+            }
             eventData.pointerDrag.GetComponent<DragScript>().initialPos = gameObject.transform;
 
         }

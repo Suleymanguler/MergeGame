@@ -53,10 +53,15 @@ public class projectileActor : MonoBehaviour {
     public bool MajorRotate = false;
     int seq = 0;
 
+    //kod denemesi (ateşi yavaşlatmak için)
+
+
 
 	// Use this for initialization
 	void Start ()
     {
+        firing = true;
+      
         //if (UImaster)
         //{
         //    UiText.text = bombList[bombType].name.ToString();
@@ -70,6 +75,7 @@ public class projectileActor : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        
         spawnLocator.transform.rotation = Quaternion.Euler(0, 0,0);
         //Movement
         if(Input.GetButton("Horizontal"))
@@ -96,29 +102,44 @@ public class projectileActor : MonoBehaviour {
 
 	    if(Input.GetButtonDown("Fire1"))
         {
-            //StartCoroutine(CameraShakeCaller.shake(.1f, .1f));
-            firing = true;
-            Fire();
+           
+            //firing = true;
+            //Fire();
         }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            firing = false;
-            firingTimer = 0;
-        }
+        //if (Input.GetButtonUp("Fire1"))
+        //{
+        //    firing = false;
+        //    firingTimer = 0;
+        //}
 
-        if (bombList[bombType].rapidFire && firing)
-        {
-            if(firingTimer > bombList[bombType].rapidFireCooldown+rapidFireDelay)
+        //if (bombList[bombType].rapidFire && firing)
+        //{
+        //    if (firingTimer > bombList[bombType].rapidFireCooldown + rapidFireDelay)
+        //    {
+        //        Fire();
+        //        firingTimer = 0;
+        //    }
+        //}
+        
+            if (firingTimer > bombList[bombType].rapidFireCooldown + rapidFireDelay)
             {
                 Fire();
                 firingTimer = 0;
             }
-        }
+        
 
-        if(firing)
+        if (firing)
         {
             firingTimer += Time.deltaTime;
+
         }
+        //if(firingTimer>rapidFireDelay&&firing==true)
+        //{
+        //    Fire();
+        //    firingTimer = 0;
+        //    firing = false;
+        //}
+        
 	}
 
     public void Switch(int value)
@@ -133,10 +154,7 @@ public class projectileActor : MonoBehaviour {
             {
                 bombType = 0;
             }
-        if (UImaster)
-        {
-            UiText.text = bombList[bombType].name.ToString();
-        }
+        
     }
 
     public void Fire()

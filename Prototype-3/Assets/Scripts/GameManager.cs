@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject gunLv1;
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
         {
             if (spawnLocations[spawnOrderNumber].GetComponent<dropScript>().isOccupied == false)
             {
-                GameObject gunLv1Object = Instantiate(gunLv1, spawnLocations[spawnOrderNumber].position, transform.rotation, GameObject.Find("Canvas").transform);
+                GameObject gunLv1Object = Instantiate(gunLv1, spawnLocations[spawnOrderNumber].position, transform.rotation, GameObject.Find("MergeItems").transform);
                 gunLv1Object.GetComponent<RawImage>().texture = gunImages[gunLevel].texture;
                 gunLv1Object.transform.tag = gunLevel.ToString();
                 gunLv1Object.transform.position = spawnLocations[spawnOrderNumber].position;
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
             }
            
         }
+    }
+    public void loadLevel1()
+    {
+        SceneManager.LoadScene("Level-Sample");
     }
     
 }
