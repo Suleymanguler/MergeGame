@@ -92,6 +92,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             
             //animation
             mainAnimator.SetBool("IsPistol", false);
+            mainAnimator.SetBool("IsMinigun", false);
+            
             //bullet type
             player.bombType = 3;
             //dragged object parent transform etc
@@ -183,12 +185,13 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
-            GameObject gun = Instantiate(guns[6], rifleSpawnPoint.transform.position, rifleSpawnPoint.transform.rotation);
+            GameObject gun = Instantiate(guns[6], rifleSpawnPoint.transform.position-new Vector3(0.5f,0,0.9f), rifleSpawnPoint.transform.rotation);
             gun.tag = "gun";
             gun.transform.SetParent(rifleSpawnPoint);
-            gun.transform.rotation = Quaternion.Euler(0, 90, 0);
+            gun.transform.rotation = Quaternion.Euler(65, 46, -40);
             //animation
             mainAnimator.SetBool("IsPistol", false);
+            mainAnimator.SetBool("IsMinigun", true);
             //bullet type
             player.bombType = 0;
             //dragged object parent transform etc
