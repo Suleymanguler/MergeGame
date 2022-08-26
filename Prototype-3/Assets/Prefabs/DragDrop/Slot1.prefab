@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0e0600905998b408f6cc825bbf241e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOccupied: 0
+  pointBefore: {fileID: 0}
 --- !u!225 &4491275894268933315
 CanvasGroup:
   m_ObjectHideFlags: 0

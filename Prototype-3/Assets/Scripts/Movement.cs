@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
     {
         
         //topBorder = 800f;
-        topBorder = Screen.height*2 / 5;
+        topBorder = Screen.height*3 / 6;
         speedWalk = -1f;
         rb = gameObject.GetComponent<Rigidbody>();
         speedModifier = 0.005f;

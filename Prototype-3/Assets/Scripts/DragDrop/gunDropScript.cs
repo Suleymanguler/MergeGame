@@ -52,7 +52,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             foreach(GameObject dusman in enemy)
             {
                 //damage
-                dusman.GetComponent<enemyScript>().damage = 50f;
+                dusman.GetComponent<enemyScript>().damage = 6f;
             }
             //fire rate
             player.rapidFireDelay = 0.5f;
@@ -76,10 +76,10 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             foreach (GameObject dusman in enemy)
             {
                 //damage
-                dusman.GetComponent<enemyScript>().damage = 15f;
+                dusman.GetComponent<enemyScript>().damage = 6f;
             }
             //fire rate
-            player.rapidFireDelay = 0.1f;
+            player.rapidFireDelay = 0.08f;
         }
         else if (eventData.pointerDrag.tag == "2")
         {
@@ -102,10 +102,10 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             foreach (GameObject dusman in enemy)
             {
                 //damage
-                dusman.GetComponent<enemyScript>().damage = 15f;
+                dusman.GetComponent<enemyScript>().damage = 9f;
             }
             //fire rate
-            player.rapidFireDelay = 0.1f;
+            player.rapidFireDelay = 1f;
         }
         else if (eventData.pointerDrag.tag == "3")
         {
@@ -126,10 +126,10 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             foreach (GameObject dusman in enemy)
             {
                 //damage
-                dusman.GetComponent<enemyScript>().damage = 15f;
+                dusman.GetComponent<enemyScript>().damage = 9f;
             }
             //fire rate
-            player.rapidFireDelay = 0.1f;
+            player.rapidFireDelay = 0.5f;
         }
         else if (eventData.pointerDrag.tag == "4")
         {
@@ -150,10 +150,10 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             foreach (GameObject dusman in enemy)
             {
                 //damage
-                dusman.GetComponent<enemyScript>().damage = 15f;
+                dusman.GetComponent<enemyScript>().damage = 35f;
             }
             //fire rate
-            player.rapidFireDelay = 0.1f;
+            player.rapidFireDelay = 1f;
         }
         else if (eventData.pointerDrag.tag == "5")
         {
@@ -175,7 +175,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             foreach (GameObject dusman in enemy)
             {
                 //damage
-                dusman.GetComponent<enemyScript>().damage = 15f;
+                dusman.GetComponent<enemyScript>().damage = 9f;
             }
             //fire rate
             player.rapidFireDelay = 0.1f;
@@ -185,7 +185,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
-            GameObject gun = Instantiate(guns[6], rifleSpawnPoint.transform.position-new Vector3(0.5f,0,0.9f), rifleSpawnPoint.transform.rotation);
+            GameObject gun = Instantiate(guns[6], rifleSpawnPoint.transform.position-new Vector3(1,0.5f,0.9f), rifleSpawnPoint.transform.rotation);
             gun.tag = "gun";
             gun.transform.SetParent(rifleSpawnPoint);
             gun.transform.rotation = Quaternion.Euler(65, 46, -40);
@@ -200,10 +200,10 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             foreach (GameObject dusman in enemy)
             {
                 //damage
-                dusman.GetComponent<enemyScript>().damage = 15f;
+                dusman.GetComponent<enemyScript>().damage = 5f;
             }
             //fire rate
-            player.rapidFireDelay = 0.01f;
+            player.rapidFireDelay = 0.02f;
         }
         else if (eventData.pointerDrag.tag == "7")
         {
@@ -213,11 +213,12 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             GameObject gun = Instantiate(guns[7], rifleSpawnPoint.transform.position, rifleSpawnPoint.transform.rotation);
             gun.tag = "gun";
             gun.transform.SetParent(rifleSpawnPoint);
-            gun.transform.rotation = Quaternion.Euler(90,90,90);
+            gun.transform.rotation = Quaternion.Euler(90,0,0);
             //animation
             mainAnimator.SetBool("IsPistol", false);
+            mainAnimator.SetBool("IsMinigun", false);
             //bullet type
-            player.bombType = 0;
+            player.bombType = 6;
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
@@ -227,7 +228,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
                 dusman.GetComponent<enemyScript>().damage = 15f;
             }
             //fire rate
-            player.rapidFireDelay = 0.1f;
+            player.rapidFireDelay = 1.5f;
         }
         else if (eventData.pointerDrag.tag == "8")
         {
@@ -241,7 +242,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //animation
             mainAnimator.SetBool("IsPistol", false);
             //bullet type
-            player.bombType = 0;
+            player.bombType = 5;
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
@@ -251,7 +252,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
                 dusman.GetComponent<enemyScript>().damage = 15f;
             }
             //fire rate
-            player.rapidFireDelay = 0.1f;
+            player.rapidFireDelay = 1.5f;
         }
         else if (eventData.pointerDrag.tag == "9")
         {
@@ -265,7 +266,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //animation
             mainAnimator.SetBool("IsPistol", true);
             //bullet type
-            player.bombType = 0;
+            player.bombType = 34;
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
@@ -275,7 +276,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
                 dusman.GetComponent<enemyScript>().damage = 15f;
             }
             //fire rate
-            player.rapidFireDelay = 0.1f;
+            player.rapidFireDelay = 0.5f;
         }
         else if (eventData.pointerDrag.tag == "10")
         {
@@ -285,7 +286,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             GameObject gun = Instantiate(guns[10], rifleSpawnPoint.transform.position, rifleSpawnPoint.transform.rotation);
             gun.tag = "gun";
             gun.transform.SetParent(rifleSpawnPoint);
-            gun.transform.rotation = Quaternion.Euler(0, 15, 0);
+            gun.transform.rotation = Quaternion.Euler(0, 0, 0);
             //animation
             mainAnimator.SetBool("IsPistol", false);
             //bullet type

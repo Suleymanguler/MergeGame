@@ -15,7 +15,7 @@ public class enemyScript : MonoBehaviour
     public Image healthBar;
     private void Start()
     {
-        enemyRunSpeed =12.5f;
+        enemyRunSpeed =11.5f;
 
         Health = Random.Range(minHealth, maxHealth);
         initialHealth = Health;
