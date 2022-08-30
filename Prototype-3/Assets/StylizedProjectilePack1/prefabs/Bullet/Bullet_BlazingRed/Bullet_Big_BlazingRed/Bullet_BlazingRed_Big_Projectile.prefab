@@ -9692,9 +9692,10 @@ GameObject:
   - component: {fileID: 114409874962607200}
   - component: {fileID: 199757007266605494}
   - component: {fileID: 198445665054008726}
+  - component: {fileID: 5991906992706784480}
   m_Layer: 0
   m_Name: Bullet_BlazingRed_Big_Projectile
-  m_TagString: FX
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9837,10 +9838,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796749963149706}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -14663,6 +14664,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!136 &5991906992706784480
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796749963149706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7905893
+  m_Height: 2.8877616
+  m_Direction: 0
+  m_Center: {x: -0.040207148, y: 0.61405724, z: 2.1997237}
 --- !u!1 &1924905033165216
 GameObject:
   m_ObjectHideFlags: 0
@@ -19542,25 +19557,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f76cb7831d4e702449538c1cc94c8877, type: 3}
---- !u!1 &2447882972232295894 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f76cb7831d4e702449538c1cc94c8877, type: 3}
-  m_PrefabInstance: {fileID: 3258857124636072071}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &3804366772693333507
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447882972232295894}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.7942879
-  m_Height: 5.5022907
-  m_Direction: 1
-  m_Center: {x: -0.14728594, y: 2.4503427, z: -1.3648155}
 --- !u!4 &3076926341632917356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f76cb7831d4e702449538c1cc94c8877, type: 3}

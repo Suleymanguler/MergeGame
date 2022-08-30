@@ -8,6 +8,13 @@ public class projectileActor : MonoBehaviour {
     public Transform spawnLocatorMuzzleFlare;
     public Transform shellLocator;
     public Animator recoilAnimator;
+    public bool isGrenade;
+
+    //PROJECTILE SPEEDS
+    public float forwardSpeed;
+    public float upwardSpeed;
+
+
 
     public Transform[] shotgunLocator;
 
@@ -171,12 +178,14 @@ public class projectileActor : MonoBehaviour {
             Instantiate(bombList[bombType].shellPrefab, shellLocator.position, shellLocator.rotation);
         }
         recoilAnimator.SetTrigger("recoil_trigger");
-
+        
         Rigidbody rocketInstance;
         rocketInstance = Instantiate(bombList[bombType].bombPrefab, gameObject.transform.position,gameObject.transform.rotation) as Rigidbody;
         // Quaternion.Euler(0,90,0)
         //rocketInstance.AddForce(spawnLocator.forward * Random.Range(bombList[bombType].min, bombList[bombType].max));
-        rocketInstance.AddForce(spawnLocator.forward*5000f);
+        rocketInstance.AddForce(spawnLocator.forward*forwardSpeed);
+        rocketInstance.AddForce(spawnLocator.up * upwardSpeed);
+       
 
         if (bombList[bombType].shotgunBehavior)
         {

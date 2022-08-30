@@ -14,27 +14,58 @@ public class gunDropScript : MonoBehaviour, IDropHandler
     public Transform pistolSpawnPoint;
     public Transform rifleSpawnPoint;
     public Transform rpgSpawnPoint;
+   public  bool dropHandler = false;
 
+   
 
     private void Awake()
     {
+        
+
         player = GameObject.Find("Player_2017").GetComponent<projectileActor>();
         enemy = GameObject.FindGameObjectsWithTag("enemy");
         mainAnimator = GameObject.FindGameObjectWithTag("mainCharacter").GetComponent<Animator>();
     }
+
     void IDropHandler.OnDrop(PointerEventData eventData)
     {
+        dropHandler = true;
         if (objectBefore != null)
         {
+            if (eventData.pointerDrag.tag == objectBefore.tag)
+            {
+                eventData.pointerDrag.transform.position = eventData.pointerDrag.GetComponent<DragScript>().initialPos.position;
+                dropHandler = false;
+                Debug.Log("taglar ayný fonk çalýþtý");
+            }
+        }
+        if (objectBefore != null && dropHandler == true)
+        {
+            Debug.Log("destroy çalýþtý");
             Destroy(objectBefore);
         }
-        eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-        objectBefore = eventData.pointerDrag;
-        pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
-        pointBefore.GetComponent<dropScript>().isOccupied = false;
+
+
         
-        if (eventData.pointerDrag.tag=="0")
+        //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+        //objectBefore = eventData.pointerDrag;
+        //pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+        //pointBefore.GetComponent<dropScript>().isOccupied = false;
+        
+        
+
+        if (eventData.pointerDrag.tag=="0" && dropHandler)
         {
+
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
+            Debug.Log("objeyi sabitle çalýþtý");
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -49,6 +80,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach(GameObject dusman in enemy)
             {
                 //damage
@@ -57,8 +90,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 0.5f;
         }
-        else if (eventData.pointerDrag.tag == "1")
+        else if (eventData.pointerDrag.tag == "1" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -73,6 +114,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach (GameObject dusman in enemy)
             {
                 //damage
@@ -81,8 +124,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 0.08f;
         }
-        else if (eventData.pointerDrag.tag == "2")
+        else if (eventData.pointerDrag.tag == "2" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -99,6 +150,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach (GameObject dusman in enemy)
             {
                 //damage
@@ -107,8 +160,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 1f;
         }
-        else if (eventData.pointerDrag.tag == "3")
+        else if (eventData.pointerDrag.tag == "3" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -123,6 +184,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach (GameObject dusman in enemy)
             {
                 //damage
@@ -131,8 +194,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 0.5f;
         }
-        else if (eventData.pointerDrag.tag == "4")
+        else if (eventData.pointerDrag.tag == "4" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -147,6 +218,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach (GameObject dusman in enemy)
             {
                 //damage
@@ -155,8 +228,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 1f;
         }
-        else if (eventData.pointerDrag.tag == "5")
+        else if (eventData.pointerDrag.tag == "5" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -172,6 +253,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach (GameObject dusman in enemy)
             {
                 //damage
@@ -180,8 +263,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 0.1f;
         }
-        else if (eventData.pointerDrag.tag == "6")
+        else if (eventData.pointerDrag.tag == "6" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -197,16 +288,26 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach (GameObject dusman in enemy)
             {
                 //damage
                 dusman.GetComponent<enemyScript>().damage = 5f;
             }
             //fire rate
-            player.rapidFireDelay = 0.02f;
+            player.rapidFireDelay = 0.07f;
         }
-        else if (eventData.pointerDrag.tag == "7")
+        else if (eventData.pointerDrag.tag == "7" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 8000;
+            player.upwardSpeed = 4000;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -222,6 +323,9 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+
+            //SEPACIAL EFFECT FOR THIS GUN
+            player.isGrenade = true;
             foreach (GameObject dusman in enemy)
             {
                 //damage
@@ -230,8 +334,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 1.5f;
         }
-        else if (eventData.pointerDrag.tag == "8")
+        else if (eventData.pointerDrag.tag == "8" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -246,6 +358,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = true;
             foreach (GameObject dusman in enemy)
             {
                 //damage
@@ -254,8 +368,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 1.5f;
         }
-        else if (eventData.pointerDrag.tag == "9")
+        else if (eventData.pointerDrag.tag == "9" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -270,6 +392,8 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach (GameObject dusman in enemy)
             {
                 //damage
@@ -278,8 +402,16 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //fire rate
             player.rapidFireDelay = 0.5f;
         }
-        else if (eventData.pointerDrag.tag == "10")
+        else if (eventData.pointerDrag.tag == "10" && dropHandler)
         {
+            //projectile speed
+            player.forwardSpeed = 5000;
+            player.upwardSpeed = 0;
+            //////
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            objectBefore = eventData.pointerDrag;
+            pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
+            pointBefore.GetComponent<dropScript>().isOccupied = false;
             //destroying gun there before
             Destroy(GameObject.FindGameObjectWithTag("gun"));
             //spawn gun 3d
@@ -290,19 +422,20 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             //animation
             mainAnimator.SetBool("IsPistol", false);
             //bullet type
-            player.bombType = 0;
+            player.bombType = 40;
             //dragged object parent transform etc
             eventData.pointerDrag.transform.SetParent(gameObject.transform);
             eventData.pointerDrag.GetComponent<DragScript>().enabled = false;
+            //is grenade
+            player.isGrenade = false;
             foreach (GameObject dusman in enemy)
             {
                 //damage
                 dusman.GetComponent<enemyScript>().damage = 15f;
             }
             //fire rate
-            player.rapidFireDelay = 0.1f;
+            player.rapidFireDelay = 0.4f;
         }
-
 
     }
 }

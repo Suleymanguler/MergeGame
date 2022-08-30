@@ -9,7 +9,14 @@ public class ExplodingProjectile : MonoBehaviour
     public GameObject explosionPrefab;
     public float thrust;
 
+    GameObject explosion;
+    explosivoSpawner explosivoSpawnerScript;
+    projectileActor player;
+
+
+
     public Rigidbody thisRigidbody;
+
 
     public GameObject particleKillGroup;
     private Collider thisCollider;
@@ -31,6 +38,8 @@ public class ExplodingProjectile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        player = GameObject.Find("Player_2017").GetComponent<projectileActor>();
+        explosivoSpawnerScript = GameObject.Find("ExplosivoSpawner").GetComponent<explosivoSpawner>();
         thisRigidbody = GetComponent<Rigidbody>();
         if (Missile)
         {
@@ -106,8 +115,16 @@ public class ExplodingProjectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (player.isGrenade == true)
+        {
+            explosivoSpawnerScript.spawnExplosivo();
+            explosion = GameObject.Find("explosion_stylized_medium_originalFire(Clone)");
+            GameObject explosivo = Instantiate(explosion, gameObject.transform.position, transform.rotation);
+        }
+
         if (collision.gameObject.tag != "FX")
         {
+           
             ContactPoint contact = collision.contacts[0];
             Quaternion rot = Quaternion.FromToRotation(Vector3.forward, contact.normal);
             if (ignorePrevRotation)

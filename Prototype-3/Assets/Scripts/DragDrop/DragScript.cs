@@ -31,7 +31,7 @@ public class DragScript : MonoBehaviour,IDragHandler,IPointerDownHandler,IEndDra
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
-        myRectTransform.anchoredPosition += eventData.delta * 2 / 3;
+        myRectTransform.anchoredPosition += eventData.delta * 3/ 5;
         myCanvasGroup.blocksRaycasts = false;
     }
 
