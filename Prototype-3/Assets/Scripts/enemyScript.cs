@@ -64,7 +64,7 @@ public class enemyScript : MonoBehaviour
 
             if (Health <= 0)
             {
-
+                //GetComponent<Renderer>().material.color = Color.black;
                 gameObject.tag = "dead";
                 enemyRunSpeed = 0f;
                 enemyAnimator.SetBool("dead", true);
@@ -85,6 +85,7 @@ public class enemyScript : MonoBehaviour
             //lower health bar 
             if(Health<=0)
             {
+                //GetComponent<Renderer>().material.color = Color.black;
                 gameObject.tag = "dead";
                 enemyRunSpeed = 0f;
                 enemyAnimator.SetBool("dead", true);
@@ -101,6 +102,7 @@ public class enemyScript : MonoBehaviour
             
             if (Health <= 0)
             {
+                //GetComponent<Renderer>().material.color = Color.black;
                 gameObject.tag = "dead";
                 enemyRunSpeed = 0f;
                 enemyAnimator.SetBool("dead", true);
