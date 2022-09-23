@@ -61,7 +61,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition-new Vector2(0,44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -96,7 +96,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -130,7 +130,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -166,7 +166,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -200,7 +200,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -234,7 +234,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -269,7 +269,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -304,7 +304,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 8000;
             player.upwardSpeed = 4000;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -340,7 +340,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -374,7 +374,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;
@@ -408,7 +408,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
             //////
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(0, 44);
             objectBefore = eventData.pointerDrag;
             pointBefore = eventData.pointerDrag.GetComponent<DragScript>().initialPos;
             pointBefore.GetComponent<dropScript>().isOccupied = false;

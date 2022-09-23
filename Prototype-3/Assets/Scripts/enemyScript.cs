@@ -17,9 +17,14 @@ public class enemyScript : MonoBehaviour
     public float pushbackTime;
     public GameObject Explosion;
     Animator enemyAnimator;
+    Renderer[] thisGameobject;
+
+    CoinScript coinText;
     private void Start()
 
     {
+        coinText = GameObject.Find("CoinHandler").GetComponent<CoinScript>();
+
         enemyAnimator = GetComponent<Animator>();
         pushback = false;
 
@@ -28,7 +33,7 @@ public class enemyScript : MonoBehaviour
         Health = Random.Range(minHealth, maxHealth);
         initialHealth = Health;
         mainCharacterObject = GameObject.FindGameObjectWithTag("mainCharacter");
-        
+        thisGameobject = gameObject.GetComponentsInChildren<Renderer>();
     }
     private void LateUpdate()
     {
@@ -64,7 +69,11 @@ public class enemyScript : MonoBehaviour
 
             if (Health <= 0)
             {
-                //GetComponent<Renderer>().material.color = Color.black;
+                coinText.raiseGold(5);
+                foreach (var ob in thisGameobject)
+                {
+                    ob.material.color = Color.black;
+                }
                 gameObject.tag = "dead";
                 enemyRunSpeed = 0f;
                 enemyAnimator.SetBool("dead", true);
@@ -86,6 +95,11 @@ public class enemyScript : MonoBehaviour
             if(Health<=0)
             {
                 //GetComponent<Renderer>().material.color = Color.black;
+                coinText.raiseGold(5);
+                foreach (var ob in thisGameobject)
+                {
+                    ob.material.color = Color.black;
+                }
                 gameObject.tag = "dead";
                 enemyRunSpeed = 0f;
                 enemyAnimator.SetBool("dead", true);
@@ -102,7 +116,11 @@ public class enemyScript : MonoBehaviour
             
             if (Health <= 0)
             {
-                //GetComponent<Renderer>().material.color = Color.black;
+                coinText.raiseGold(5);
+                foreach (var ob in thisGameobject)
+                {
+                    ob.material.color = Color.black;
+                }
                 gameObject.tag = "dead";
                 enemyRunSpeed = 0f;
                 enemyAnimator.SetBool("dead", true);

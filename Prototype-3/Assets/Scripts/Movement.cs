@@ -77,6 +77,10 @@ public class Movement : MonoBehaviour
                 
                 isInside = false;
             }
+
+
+
+
             //if (touch.position.y < bottomBorder)
             //{
             //    isInside = false;
