@@ -16,11 +16,12 @@ public class gunDropScript : MonoBehaviour, IDropHandler
     public Transform rpgSpawnPoint;
    public  bool dropHandler = false;
 
+    Movement movementScript;
    
 
     private void Awake()
     {
-        
+        movementScript = GameObject.Find("MainCharacter Variant").GetComponent<Movement>();
 
         player = GameObject.Find("Player_2017").GetComponent<projectileActor>();
         enemy = GameObject.FindGameObjectsWithTag("enemy");
@@ -56,7 +57,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
 
         if (eventData.pointerDrag.tag=="0" && dropHandler)
         {
-
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -92,6 +93,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "1" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -126,6 +128,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "2" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -162,6 +165,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "3" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -196,6 +200,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "4" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -230,6 +235,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "5" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -265,6 +271,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "6" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -300,6 +307,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "7" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = true;
             //projectile speed
             player.forwardSpeed = 8000;
             player.upwardSpeed = 4000;
@@ -336,6 +344,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "8" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -370,6 +379,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "9" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;
@@ -404,6 +414,7 @@ public class gunDropScript : MonoBehaviour, IDropHandler
         }
         else if (eventData.pointerDrag.tag == "10" && dropHandler)
         {
+            movementScript.isGrenadeLauncher = false;
             //projectile speed
             player.forwardSpeed = 5000;
             player.upwardSpeed = 0;

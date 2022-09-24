@@ -83,11 +83,33 @@ public class enemyScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag=="dead")
+        if (collision.transform.tag == "dead")
         {
             Physics.IgnoreCollision(collision.gameObject.GetComponent<CapsuleCollider>(), GetComponent<CapsuleCollider>());
         }
-        if (collision.transform.tag == "FX")
+        if (collision.transform.tag == "explosive")
+        {
+            Debug.Log("trigger");
+            //Instantiate(Explosion, transform.position, transform.rotation);
+            Health -= damage;
+            healthBar.fillAmount = Health / initialHealth;
+            //lower health bar 
+
+            if (Health <= 0)
+            {
+                coinText.raiseGold(5);
+                foreach (var ob in thisGameobject)
+                {
+                    ob.material.color = Color.black;
+                }
+                gameObject.tag = "dead";
+                enemyRunSpeed = 0f;
+                enemyAnimator.SetBool("dead", true);
+                Destroy(gameObject, 5f);
+            }
+        }
+        
+        else if (collision.transform.tag == "FX")
         {
             Health -= damage;
             healthBar.fillAmount = Health / initialHealth;

@@ -9695,7 +9695,7 @@ GameObject:
   - component: {fileID: 5991906992706784480}
   m_Layer: 0
   m_Name: Bullet_BlazingRed_Big_Projectile
-  m_TagString: Untagged
+  m_TagString: explosive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

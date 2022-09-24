@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
     GameObject enemy;
     //grenade launcher launchspeed
     projectileActor player;
+    public bool isGrenadeLauncher;
 
     public bool isInside;
     public float distance;
@@ -46,19 +47,26 @@ public class Movement : MonoBehaviour
     void LateUpdate()
     {
         enemy = GameObject.FindGameObjectWithTag("enemy");
-        distance = Vector3.Distance(gameObject.transform.position, enemy.transform.position);
-        if (distance > 30)
+        if (isGrenadeLauncher && enemy!=null)
         {
-            player.forwardSpeed = distance * 200;
-        }
-        else if(distance<30 && distance>16)
-        {
-            player.forwardSpeed = distance * 80;
-        }
-        else if(distance<16)
-        {
-            player.forwardSpeed = distance * 200;
-            player.upwardSpeed = 1000f;
+            Debug.Log("calculating distance");
+            distance = Vector3.Distance(gameObject.transform.position, enemy.transform.position);
+            if (distance > 30)
+            {
+                Debug.Log("more than 30");
+                player.forwardSpeed = distance * 200;
+            }
+            else if (distance < 30 && distance > 16)
+            {
+                Debug.Log("more than 16");
+                player.forwardSpeed = distance * 80;
+            }
+            else if (distance < 16)
+            {
+                Debug.Log("less than 16");
+                player.forwardSpeed = distance * 200;
+                player.upwardSpeed = 1000f;
+            }
         }
         transform.Translate(0, 0, 10 * speedWalk * Time.deltaTime);
         float horizontalAxis = Input.GetAxisRaw("Horizontal") * LRMovement * Time.deltaTime;
